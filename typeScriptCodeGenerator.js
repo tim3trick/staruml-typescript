@@ -546,7 +546,7 @@ class TypeScriptCodeGenerator {
             this.writeDoc(codeWriter, doc, options);
 
             // modifiers
-            if (!elem._parent instanceof type.UMLInterface) {
+            if (!(elem._parent instanceof type.UMLInterface)) {
                 var _modifiers = this.getModifiers(elem);
                 if (_modifiers.length > 0) {
                     terms.push(_modifiers.join(" "));
@@ -674,7 +674,7 @@ class TypeScriptCodeGenerator {
 
             // modifiers
             console.log('writemember', 'elem', elem, elem._parent instanceof type.UMLInterface);
-            if (!elem._parent instanceof type.UMLInterface) {
+            if (!(elem._parent instanceof type.UMLInterface)) {
                 var _modifiers = this.getModifiers(elem);
                 if (_modifiers.length > 0) {
                     terms.push(_modifiers.join(" "));
@@ -830,4 +830,3 @@ function generate(baseModel, basePath, options) {
 }
 
 exports.generate = generate;
-
